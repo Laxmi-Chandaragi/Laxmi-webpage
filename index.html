@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laxmi Chandaragi | Data Analyst</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #1d4ed8;
+      --secondary: #38bdf8;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 26px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.95rem;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(180deg, #eff6ff, #f9fafb);
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 3.4rem;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+      color: var(--primary);
+    }
+
+    header p {
+      font-size: 1.3rem;
+      color: var(--muted);
+      max-width: 760px;
+      margin: auto;
+    }
+
+    section {
+      padding: 90px 20px;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 50px;
+      text-align: center;
+      position: relative;
+    }
+
+    h2::after {
+      content: "";
+      display: block;
+      width: 70px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      margin: 16px auto 0;
+      border-radius: 4px;
+    }
+
+    .about p {
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.08rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .education, .skills, .projects, .certificates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 34px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 34px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 45px rgba(15, 23, 42, 0.12);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.35rem;
+      color: var(--secondary);
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    ul { padding-left: 20px; }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .connect {
+      text-align: center;
+      background: linear-gradient(180deg, #f8fafc, #eef2ff);
+    }
+
+    .social-links {
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      margin: 0 18px;
+      font-size: 1.9rem;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 14px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #ffffff;
+      background: var(--primary);
+      transform: translateY(-6px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      background: #e5e7eb;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-logo">Laxmi Chandaragi</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <div style="display:flex; flex-direction:column; align-items:center; gap:24px;">
+    <img src="images/photo.JPG" alt="Laxmi Chandaragi" style="width:160px; height:160px; border-radius:50%; object-fit:cover; border:5px solid #ffffff; box-shadow:0 12px 30px rgba(0,0,0,0.15);" />
+    <h1>Laxmi Chandaragi</h1>
+    <p>Data Analyst | Python • SQL • Statistics • Data Visualization</p>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>
+    I am a Computer Science graduate and aspiring Data Analyst with a strong foundation in statistics, Python, and data analytics. I enjoy working with data to uncover insights, identify trends, and support data-driven decision making. My interest lies in exploratory data analysis, business analytics, and translating data into meaningful stories.
+  </p>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="education">
+    <div class="card">
+      <h3>BE – Computer Science</h3>
+      <p><strong>Year:</strong> 2024 / CGPA-8</p>
+      <p>KLS Vishwanathrao Deshpande Institute of Technology Haliyal</p>
+    </div>
+    <div class="card">
+      <h3>PUC </h3>
+      <p><strong>Year -</strong> 2020 / 81%</p>
+      <p>Smt. Vidya P.Hanchinmani Independent Pre-Uiversity Science College Dharwad</p>
+    </div>
+    <div class="card">
+      <h3>SSLC</h3>
+      <p><strong>Year -</strong> 2018 / 85.6%</p>
+      <p>Government High School Yadawad, Dharwad</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="card">
+      <h3>Data Analysis</h3>
+      <ul class="skill-list">
+        <li>Data Cleaning & Preparation</li>
+        <li>Exploratory Data Analysis (EDA)</li>
+        <li>Insight Generation</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Programming & Tools</h3>
+      <ul class="skill-list">
+        <li>Python (Pandas, NumPy)</li>
+        <li>SQL</li>
+        <li>Excel</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Statistics</h3>
+      <ul class="skill-list">
+        <li>Descriptive Statistics</li>
+        <li>Probability & Correlation</li>
+        <li>Hypothesis Testing</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Visualization</h3>
+      <ul class="skill-list">
+        <li>Matplotlib</li>
+        <li>Seaborn</li>
+        <li>Data Storytelling</li>
+        <li>PowerBI / Tableau</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <div class="project-title">Hospital Management Data Analysis</div>
+      <p>Analyzed hospital patient and operational data to identify admission trends, resource utilization, and efficiency gaps using Python and SQL.</p>
+    </div>
+    <div class="card">
+      <div class="project-title">Retail Sales Analytics</div>
+      <p>Performed retail sales analysis to uncover customer purchasing patterns, seasonal demand, and product performance insights.</p>
+    </div>
+    <div class="card">
+      <div class="project-title">Waste‑Wise: Plastic Recycling Analytics</div>
+      <p>Studied plastic waste datasets to identify recycling trends and improvement opportunities through EDA and visualization.</p>
+    </div>
+    <div class="card">
+      <div class="project-title">Capstone Project – End‑to‑End Data Analysis</div>
+      <p>Executed a complete data analysis lifecycle including data collection, cleaning, analysis, visualization, and insight presentation.</p>
+    </div>
+  </div>
+</section>
+
+<section id="certificates">
+  <h2>Certificates</h2>
+  <div class="certificates">
+    <div class="card">
+      <ul>
+        <li>Google Data Analytics Professional Certificate</li>
+        <li>Data Analyst Certification – Honeywell</li>
+        <li>Python for Data Analysis – Online Course</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="connect" class="connect">
+  <h2>Connect With Me</h2>
+  <div class="social-links">
+
+    <a href="mailto:lchandaragi332@gmail.com">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/laxmichandaragi12/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fa-brands fa-linkedin" ></i>
+    </a>
+
+    <a href="https://github.com/Laxmi-Chandaragi" target="_blank">
+      <i class="fa-brands fa-github"></i>
+    </a>
+
+  </div>
+</section>
+
+
+<footer>
+  © 2026 Laxmi Chandaragi | Data Analyst Portfolio
+</footer>
+
+</body>
+</html>
+
+
